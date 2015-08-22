@@ -34,7 +34,7 @@
 
 
 /* inclusion files */
-#include "../fw_common.h"
+#include "fw_common.h"
 
 
 

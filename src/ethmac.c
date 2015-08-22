@@ -53,11 +53,9 @@ TODO LIST:
 #include <sys/attribs.h>
 
 #include "p32mx795f512l.h"
-#include "../fw_common.h"
+#include "fw_common.h"
 
 #include "ethmac.h"
-
-#include "../sal/udp/ipv4.h"  /* only use to obtain IPv4 datagram octects length */
 
 
 
@@ -81,8 +79,8 @@ TODO LIST:
 /* num of RX descriptors */
 #define UC_NUM_OF_RX_DCPT                   (ETHMAC_UC_RX_NUM_OF_BUFFERS)
 
-/* length of each buffer in bytes */
-#define US_DATA_BUFFER_LENGTH               (IPV4_US_ACCEPTED_MIN_LENGTH)
+/* length of each buffer in bytes (Minimum length in octects of datagrams to receive) */
+#define US_DATA_BUFFER_LENGTH               (576)
 
 /* Back to back inter-packet gap defined as default register value */
 #define BB_INTERPACKET_GAP_VALUE            0x15

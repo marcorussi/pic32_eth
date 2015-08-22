@@ -46,7 +46,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "../fw_common.h"
+#include "fw_common.h"
 
 
 

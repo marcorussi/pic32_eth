@@ -22,31 +22,28 @@
 */
 
 /*
- * This file ethphy.h represents the PHY layer inclusion file
- * of the UDP/IP stack.
+ * This file int.c represents the source file of the interrupt component.
  *
  * Author : Marco Russi
  *
  * Evolution of the file:
- * 10/08/2015 - File created - Marco Russi
+ * 06/08/2015 - File created - Marco Russi
  *
 */
 
-#ifndef _ETHPHY_H
-#define _ETHPHY_H
 
-
-/* inclusion files */
+#include "p32mx795f512l.h"
 #include "fw_common.h"
 
+#include "int.h"
 
 
+/* Enable global interrupts */
+EXPORTED void INT_EnableInt( void )
+{
+    /* multi vector */
+    INTCONbits.MVEC = 1;
 
-/* Exported functions prototypes */
-EXTERN boolean ETHPHY_Init(void);
-
-
-
-
-#endif
-/* End of files */
+    /* enable interrupts */
+    asm("ei");
+}
